@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D14945E7-543D-4D7C-8B2B-BF3AB7CD0093</string>
+	<string>3FCA9E7F-6032-4B94-922F-3233E3E10F22</string>
 	<key>IDESourceControlProjectName</key>
 	<string>SegmentedControl + PageViewControl</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -16,13 +16,13 @@
 		<string>https://github.com/jianyaoang/Sliding.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SegmentedControl + PageViewControl.xcodeproj</string>
+	<string>SegmentedControl + PageViewControl.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>B077713B17818279B1887C0872221FC33D53804D</key>
-		<string>../../..</string>
-		<key>E7596221ECA7F1EF48B2B697ECD92E58C0CEB15C</key>
 		<string>../..</string>
+		<key>E7596221ECA7F1EF48B2B697ECD92E58C0CEB15C</key>
+		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/jianyaoang/Sliding.git</string>

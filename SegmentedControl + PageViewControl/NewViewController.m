@@ -8,8 +8,10 @@
 
 #import "NewViewController.h"
 
-@interface NewViewController ()
+@interface NewViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *theLabel;
+
+@property (weak, nonatomic) IBOutlet UITableView *theTable;
 
 @end
 
@@ -18,9 +20,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.title = @"New VC";
 }
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
 
-
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
+    cell.textLabel.text = @"Hello";
+    return cell;
+}
 @end

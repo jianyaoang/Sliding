@@ -10,13 +10,16 @@
 #import "TwoViewController.h"
 #import "ThreeViewController.h"
 #import "OneViewController.h"
+#import <HMSegmentedControl.h>
 
 @interface ViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+//@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UIView *container;
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (assign, nonatomic) NSUInteger currentIndex;
+
+@property (strong, nonatomic) HMSegmentedControl *segmentedControl;
 
 @end
 
@@ -24,6 +27,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    NSDictionary *segmentedControlTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:18], NSForegroundColorAttributeName: [UIColor purpleColor]};
+//    [self.segmentedControl setTitleTextAttributes:segmentedControlTextAttributes forState:UIControlStateNormal];
+//    [self.segmentedControl setTitleTextAttributes:segmentedControlTextAttributes forState:UIControlStateHighlighted];
+    
+    
+//    self.segmentedControl.tintColor = [UIColor greenColor];
+//    self.segmentedControl.backgroundColor = [UIColor blackColor];
+    
+    self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"One", @"Two", @"Threee"]];
+    self.segmentedControl.frame = CGRectMake(16, 72, 288, 29);
+    [self.segmentedControl addTarget:self action:@selector(indexChangedForSegmentedControl) forControlEvents:UIControlEventValueChanged];
+    self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+    [self.view addSubview:self.segmentedControl];
+    
     
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
@@ -38,7 +56,7 @@
     [self.pageViewController didMoveToParentViewController:self];
     [self.view addSubview:self.pageViewController.view];
     
-    [self.segmentedControl addTarget:self action:@selector(indexChangedForSegmentedControl) forControlEvents:UIControlEventValueChanged];
+
     
 }
 
